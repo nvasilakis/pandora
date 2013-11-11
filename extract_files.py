@@ -83,7 +83,8 @@ def output(maxValidTaint, functions):
       if functions[f].library != -1: #this should be file \/
         valid.append(i[0] + " " + i[1] + " " + str(functions[f].library) + "\n")
       else: # there was no library found for this
-        invalid.append(i[0] + " " + i[1] + " " + str(maxValidTaint+1)+"\n") #" "+f+"\n") # output also functions
+        invalid.append(i[0] + " " + i[1] + " " + str(maxValidTaint)+"\n") #" "+f+"\n") # output also functions
+        maxValidTaint+=1
   #print ("Total Tags: " + str(maxValidTaint))
   return (valid, invalid)
 
